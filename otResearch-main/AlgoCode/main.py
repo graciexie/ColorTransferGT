@@ -33,3 +33,11 @@ plt.legend(loc='upper left', ncol=7, bbox_to_anchor=(-0.1, 1.15))
 plt.xlabel('1/eps')
 plt.ylabel('log_10(# of operations)')
 plt.savefig(f"results/opers")
+
+# Writing out a list of runtimes
+timeList = open("results/runtimes.txt", 'w')
+j = 0
+for algo in algos:
+    for a in A:
+        timeList.write(f"{algo} with acc={1/a} ran for {timeHis[j]} secs \n")
+timeList.close()
