@@ -38,6 +38,9 @@ plt.savefig(f"results/opers")
 timeList = open("results/runtimes.txt", 'w')
 j = 0
 for algo in algos:
+    k = 0
     for a in A:
-        timeList.write(f"{algo} with acc={1/a} ran for {timeHis[j]} secs \n")
+        timeList.write(f"{algo} with acc={1/a} ran for {timeHis[j][k]} secs \n")
+        k += 1
+    j += 1
 timeList.close()
